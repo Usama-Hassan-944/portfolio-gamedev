@@ -6,12 +6,11 @@ const Contact = () => {
 
   return (
     <section className='section contact center' id='contact'>
-      <h2 className='section__title'>Contact</h2>
-      <a href={`mailto:${contact.email}`}>
-        <span type='button' className='btn btn--outline'>
-          Email me
-        </span>
-      </a>
+      <p className='section-kicker'>Let’s build something memorable</p>
+      <h2 className='section__title'>Have a game in mind?</h2>
+      <p>I’m open to full-time roles and ambitious game projects—especially multiplayer, gameplay systems, and XR.</p>
+      <a href={`mailto:${contact.email}`} className='btn btn--primary'>Start a conversation</a>
+      <a href={`mailto:${contact.email}`} className='contact__email'>{contact.email}</a>
     </section>
   )
 }

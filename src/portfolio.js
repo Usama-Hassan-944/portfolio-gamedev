@@ -17,6 +17,12 @@ const about = {
   },
 }
 
+const highlights = [
+  { value: '5+', label: 'Years building games' },
+  { value: '10', label: 'Featured projects' },
+  { value: 'MR · PC · Mobile', label: 'Platforms shipped' },
+]
+
 const projects = [
   {
     name: 'Nexus Arcade',
@@ -212,30 +218,82 @@ const projects = [
   },
 ]
 
-const skills = [
-  'Unity',
-  'C#',
-  'C++',
-  'Python',
-  'JavaScript',
-  'SQL',
-  'Photon (Fusion & Pun2)',
-  'Netcode for GameObjects',
-  'Mixed Reality (MR)',
-  'VR/AR Interaction Systems',
-  'Voice/Text Chat Systems',
-  'AWS (Backend & Hosting)',
-  'Custom Backend APIs',
-  'Unity Multiplay',
-  'PlayFab',
-  'Firebase',
-  'Social Platform APIs (Meta, Apple, Google Play)',
-  'Git',
+const skillGroups = [
+  {
+    number: '01',
+    title: 'Gameplay & Systems',
+    description:
+      'Responsive, maintainable systems built around the player experience.',
+    skills: [
+      'Gameplay Architecture',
+      'State Machines',
+      'AI & NavMesh',
+      'Physics Systems',
+      'Procedural Generation',
+      'Data-Driven Design',
+      'UI / UX Implementation',
+      'Design Patterns',
+    ],
+  },
+  {
+    number: '02',
+    title: 'Multiplayer & Online',
+    description:
+      'Real-time multiplayer, persistent progression, and live game services.',
+    skills: [
+      'Photon Fusion',
+      'Photon PUN 2',
+      'Netcode for GameObjects',
+      'Matchmaking & Rooms',
+      'State Synchronization',
+      'Voice / Text Chat',
+      'Unity Multiplay',
+      'Live Operations',
+    ],
+  },
+  {
+    number: '03',
+    title: 'XR & Platforms',
+    description:
+      'Immersive and cross-platform experiences from headset to browser.',
+    skills: [
+      'Mixed Reality',
+      'VR / AR Interactions',
+      'Meta Quest',
+      'MR Utility Kit',
+      'Spatial Anchors',
+      'Shared Spaces',
+      'PC & Mobile',
+      'WebGL',
+    ],
+  },
+  {
+    number: '04',
+    title: 'Engineering & Services',
+    description:
+      'Production tooling and backend integrations that keep games scalable.',
+    skills: [
+      'Unity & C#',
+      'C++',
+      'Python',
+      'JavaScript',
+      'PlayFab',
+      'Firebase',
+      'AWS',
+      'SQL',
+      'Addressables',
+      'Zenject & UniRx',
+      'Git',
+      'Platform APIs',
+    ],
+  },
 ]
+
+const skills = skillGroups.flatMap((group) => group.skills)
 
 
 const contact = {
   email: 'usamahassan944@gmail.com',
 }
 
-export { header, about, projects, skills, contact }
+export { header, about, highlights, projects, skillGroups, skills, contact }

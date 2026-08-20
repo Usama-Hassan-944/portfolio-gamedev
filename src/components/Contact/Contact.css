@@ -1,3 +1,5 @@
-.contact {
-  flex-direction: column;
-}
+.contact { padding: clamp(3rem, 8vw, 6rem); display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid var(--clr-line); border-radius: 30px; background: var(--clr-bg-alt); }
+.contact .section__title { max-width: 720px; }
+.contact > p:not(.section-kicker) { max-width: 580px; margin: 1.3rem 0 2rem; color: var(--clr-muted); }
+.contact__email { margin-top: 1rem; color: var(--clr-muted); font-size: .82rem; }
+.contact__email:hover { color: var(--clr-primary); }

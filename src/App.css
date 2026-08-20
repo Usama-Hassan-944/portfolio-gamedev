@@ -1,152 +1,17 @@
-.app {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
-  color: var(--clr-fg);
-  background-color: var(--clr-bg);
-}
-
-.light {
-  --clr-bg: #fcfcfc;
-  --clr-bg-alt: #fff;
-  --clr-fg: #555;
-  --clr-fg-alt: #444;
-  --clr-primary: #2978b5;
-  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.dark {
-  --clr-bg: #23283e;
-  --clr-bg-alt: #2a2f4c;
-  --clr-fg: #bdbddd;
-  --clr-fg-alt: #cdcdff;
-  --clr-primary: #90a0d9;
-  --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
-
-main {
-  max-width: 1100px;
-  width: 95%;
-  margin: 0 auto;
-}
-
-.section {
-  margin-top: 5em;
-}
-
-.section__title {
-  text-align: center;
-  margin-bottom: 1em;
-  text-transform: uppercase;
-}
-
-.center {
-  display: flex;
-  align-items: center;
-}
-
-.link {
-  color: var(--clr-primary);
-  padding: 0 0 0.3em 0;
-  position: relative;
-}
-
-.link:hover {
-  color: var(--clr-primary);
-}
-
-.link::before {
-  content: '';
-  display: inline;
-  width: 0%;
-  height: 0.2em;
-  position: absolute;
-  bottom: 0;
-  background-color: var(--clr-primary);
-  transition: width 0.2s ease-in;
-}
-
-.link:hover::before,
-.link:focus::before {
-  width: 100%;
-}
-
-.link--nav {
-  color: var(--clr-fg);
-  text-transform: lowercase;
-  font-weight: 500;
-}
-
-.link--icon {
-  color: var(--clr-fg);
-}
-
-.btn {
-  display: block;
-  cursor: pointer;
-  padding: 0.8em 1.4em;
-  font-weight: 500;
-  font-size: 0.9rem;
-  text-transform: lowercase;
-  transition: transform 0.2s ease-in-out;
-}
-
-.btn--outline {
-  color: var(--clr-primary);
-  border: 2px solid var(--clr-primary);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.btn--outline:hover,
-.btn--outline:focus {
-  color: var(--clr-bg);
-}
-
-.btn--outline:before {
-  content: '';
-  position: absolute;
-  background-color: var(--clr-primary);
-  right: 100%;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  transition: right 0.2s ease-in-out;
-}
-
-.btn--outline:hover:before,
-.btn--outline:focus:before {
-  right: 0;
-}
-
-.btn--plain {
-  text-transform: initial;
-  background-color: var(--clr-bg-alt);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-  border: 0;
-}
-
-.btn--plain:hover {
-  transform: translateY(-4px);
-}
-
-.btn--icon {
-  padding: 0;
-}
-
-.btn--icon:hover,
-.btn--icon:focus {
-  color: var(--clr-primary);
-}
-
-.btn--icon:active {
-  transform: translateY(-5px);
-}
-
-@media (max-width: 600px) {
-  .section {
-    margin-top: 4em;
-  }
-}
+.app { --clr-primary: #9bea45; --clr-accent: #60a5fa; --radius: 22px; min-height: 100vh; color: var(--clr-fg); background: var(--clr-bg); line-height: 1.65; transition: color .25s ease, background .25s ease; }
+.light { --clr-bg: #f3f5ef; --clr-bg-alt: #fff; --clr-surface: #e8ebe3; --clr-fg: #34403c; --clr-fg-alt: #101714; --clr-muted: #6d7873; --clr-line: rgba(16,23,20,.13); --shadow: 0 24px 70px rgba(35,48,42,.12); }
+.dark { --clr-bg: #080b0a; --clr-bg-alt: #101512; --clr-surface: #171d19; --clr-fg: #abb7b0; --clr-fg-alt: #f4f8f5; --clr-muted: #829087; --clr-line: rgba(255,255,255,.11); --shadow: 0 24px 70px rgba(0,0,0,.35); }
+.main { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+.section { margin-top: 9rem; }
+.section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 3rem; margin-bottom: 3rem; }
+.section-heading > p { max-width: 480px; color: var(--clr-muted); }
+.section-kicker { color: var(--clr-primary); font-size: .76rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; margin-bottom: .7rem; }
+.section__title { color: var(--clr-fg-alt); font-size: clamp(2.2rem, 5vw, 4rem); letter-spacing: -.055em; }
+.btn { min-height: 48px; padding: 0 1.25rem; border: 1px solid transparent; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; gap: .55rem; font-size: .9rem; font-weight: 700; transition: transform .2s, background .2s, color .2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn--primary { color: #101714; background: var(--clr-primary); }
+.btn--outline { color: var(--clr-fg-alt); border-color: var(--clr-line); background: transparent; }
+.btn--outline:hover { border-color: var(--clr-primary); }
+.btn--icon { padding: 0; border: 0; background: transparent; }
+.link { position: relative; }
+@media (max-width: 700px) { .main { width: min(100% - 28px, 1180px); } .section { margin-top: 6rem; } .section-heading { display: block; } .section-heading > p { margin-top: 1rem; } }

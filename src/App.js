@@ -16,7 +16,7 @@ const App = () => {
     <div id='top' className={`${themeName} app`}>
       <Header />
 
-      <main>
+      <main className='main'>
         <About />
         <Projects />
         <Skills />

@@ -1,12 +1,96 @@
-.skills__list {
-  max-width: 450px;
-  width: 95%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
 }
 
-.skills__list-item {
-  margin: 0.5em;
+.skill-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+  border: 1px solid var(--clr-line);
+  border-radius: var(--radius);
+  background: var(--clr-bg-alt);
+  transition: transform .25s ease, border-color .25s ease;
+}
+
+.skill-card::after {
+  content: '';
+  position: absolute;
+  right: -55px;
+  bottom: -75px;
+  width: 160px;
+  height: 160px;
+  border: 1px solid var(--clr-line);
+  border-radius: 50%;
+  box-shadow: 0 0 0 28px var(--clr-bg-alt), 0 0 0 29px var(--clr-line);
+  opacity: .55;
+  pointer-events: none;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(155, 234, 69, .5);
+}
+
+.skill-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-card__header > span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  color: #101714;
+  background: var(--clr-primary);
+  font: 700 .7rem 'Space Grotesk', sans-serif;
+}
+
+.skill-card h3 {
+  color: var(--clr-fg-alt);
+  font-size: clamp(1.3rem, 2.4vw, 1.65rem);
+  letter-spacing: -.035em;
+}
+
+.skill-card > p {
+  max-width: 430px;
+  margin-top: 1rem;
+  color: var(--clr-muted);
+  font-size: .88rem;
+}
+
+.skill-card__list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .65rem 1rem;
+  margin-top: 1.5rem;
+}
+
+.skill-card__list li {
+  display: flex;
+  align-items: baseline;
+  gap: .55rem;
+  color: var(--clr-fg);
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+.skill-card__list li span {
+  color: var(--clr-primary);
+  font-size: 1rem;
+}
+
+@media (max-width: 760px) {
+  .skills__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .skill-card__list { grid-template-columns: 1fr; }
 }
